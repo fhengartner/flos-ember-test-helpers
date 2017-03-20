@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('one-button');
+  this.route('otherpage');
 });
 
 export default Router;
