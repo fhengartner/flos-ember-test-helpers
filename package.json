@@ -1,12 +1,13 @@
 {
   "name": "flos-ember-test-helpers",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember test helpers",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-test-helpers"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Florian Hengartner",
   "directories": {
     "doc": "doc",
     "test": "tests"
