@@ -4,21 +4,31 @@ This addon provides and registers test helpers for use in the testing of your ap
 
 # Provided Helpers
 
-## clickAndAssertCurrentPath
+## clickAndAssertPath
 
 ```js
-clickAndAssertCurrentPath(assert, selector, expectedPath);
+clickAndAssertPath(assert, selector, expectedPath);
 ```
 
 Click on the element specified by `selector` and assert that it has transitioned to route `expectedPath`.
 
-```html
-<button>click me</button>
+```js
+// Example:
+clickAndAssertPath(assert, 'button', 'other.route');
 ```
+
+## visitAndAssertPath
+
+```js
+visitAndAssertPath(assert, path, expectedPath);
+```
+
+Visit path and assert that it has transitioned to route `expectedPath`.
 
 ```js
 // Example:
-clickAndAssertCurrentPath(assert, 'button', 'other.route');
+visitAndAssertPath(assert, '/a/path', 'a.path');
+visitAndAssertPath(assert, '/will/redirect', 'expected.route');
 ```
 
 # How to use this addon in your application
@@ -31,8 +41,9 @@ ember install flos-ember-test-helpers
 
 ## Using in acceptance tests
 
-* Add `import from './click-and-assert-current-path';` to the beginning of the `tests/helpers/start-app.js` file
+* Add `import from './flos-test-helpers/click-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
+* Add `import from './flos-test-helpers/visit-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
 * Ignore globals in eslint / jshint
-  * Add `"clickAndAssertCurrentPath": true,` to the globals section of the `.eslintrc`
-  * Add "clickAndAssertCurrentPath", to the predef section of the `/tests/.jshintrc` file
+  * Add `"clickAndAssertPath": true,` to the globals section of the `.eslintrc`
+  * Add "clickAndAssertPath", to the predef section of the `/tests/.jshintrc` file
 

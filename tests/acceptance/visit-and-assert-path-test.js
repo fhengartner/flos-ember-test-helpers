@@ -2,11 +2,11 @@ import Ember from 'ember';
 import startApp from 'dummy/tests/helpers/start-app';
 import { module } from 'qunit';
 import { test } from 'ember-qunit';
-import { clickAndAssertCurrentPath } from 'dummy/tests/helpers/click-and-assert-current-path';
+import 'dummy/tests/helpers/flos-test-helpers/visit-and-assert-path';
 
 let app;
 
-module('Acceptance: clickAndAssertCurrentPath', {
+module('Acceptance: visitAndAssertPath', {
   beforeEach() {
     app = startApp();
   },
@@ -15,10 +15,10 @@ module('Acceptance: clickAndAssertCurrentPath', {
   }
 });
 
-test('clickAndAssertCurrentPath', function(assert) {
+test('visitAndAssertPath', function(assert) {
   visit('/one-button');
 
-  clickAndAssertCurrentPath(assert, 'button', 'otherpage');
+  visitAndAssertPath(assert, '/otherpage', 'otherpage');
 
   andThen(() => assert.equal(currentPath(), 'otherpage'));
 });
