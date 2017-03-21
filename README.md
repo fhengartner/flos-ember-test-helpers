@@ -1,27 +1,38 @@
-# flos-ember-test-helpers
+# What is flos-ember-test-helpers
 
-This README outlines the details of collaborating on this Ember addon.
+This addon provides and registers test helpers for use in the testing of your application.
 
-## Installation
+# Provided Helpers
 
-* `git clone <repository-url>` this repository
-* `cd flos-ember-test-helpers`
-* `npm install`
-* `bower install`
+## clickAndAssertCurrentPath
 
-## Running
+```js
+clickAndAssertCurrentPath(assert, selector, expectedPath);
+```
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Click on the element specified by `selector` and assert that it has transitioned to route `expectedPath`.
 
-## Running Tests
+```html
+<button>click me</button>
+```
 
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```js
+// Example:
+clickAndAssertCurrentPath(assert, 'button', 'other.route');
+```
 
-## Building
+# How to use this addon in your application
+  
+## Install
 
-* `ember build`
+```
+ember install flos-ember-test-helpers
+```
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+## Using in acceptance tests
+
+* Add `import from './click-and-assert-current-path';` to the beginning of the `tests/helpers/start-app.js` file
+* Ignore globals in eslint / jshint
+  * Add `"clickAndAssertCurrentPath": true,` to the globals section of the `.eslintrc`
+  * Add "clickAndAssertCurrentPath", to the predef section of the `/tests/.jshintrc` file
+
