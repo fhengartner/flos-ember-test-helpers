@@ -41,8 +41,10 @@ ember install flos-ember-test-helpers
 
 ## Using in acceptance tests
 
-* Add `import from './flos-test-helpers/click-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
-* Add `import from './flos-test-helpers/visit-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
+For each test helper you wish to use, you will need to import them.
+
+* Add `import './flos-test-helpers/click-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
+* Add `import './flos-test-helpers/visit-and-assert-path';` to the beginning of the `tests/helpers/start-app.js` file
 * Ignore globals in eslint / jshint
   * Add `"clickAndAssertPath": true,` to the globals section of the `.eslintrc`
   * Add "clickAndAssertPath", to the predef section of the `/tests/.jshintrc` file

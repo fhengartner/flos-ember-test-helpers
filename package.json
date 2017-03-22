@@ -4,6 +4,7 @@
   "description": "Ember test helpers",
   "keywords": [
     "ember-addon",
+    "testing",
     "ember-test-helpers"
   ],
   "license": "MIT",
