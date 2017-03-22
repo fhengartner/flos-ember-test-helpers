@@ -1,7 +1,7 @@
 {
   "name": "flos-ember-test-helpers",
   "version": "1.1.0",
-  "description": "Ember test helpers",
+  "description": "Ember CLI Addon providing test helpers",
   "keywords": [
     "ember-addon",
     "testing",
@@ -9,11 +9,15 @@
   ],
   "license": "MIT",
   "author": "Florian Hengartner",
+  "homepage": "https://github.com/fhengartner/flos-ember-test-helpers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fhengartner/flos-ember-test-helpers.git"
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
